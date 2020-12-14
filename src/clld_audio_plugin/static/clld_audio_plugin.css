@@ -1,0 +1,16 @@
+
+.leaflet-tooltip {
+  padding: 1px 3px 1px 3px;
+  opacity: 70%;
+}
+
+.popup-audio {
+  width: 140px;
+  height: 24px;
+  margin-top: 10px;
+}
+
+span.form {
+  font-size: larger;
+  font-style: italic;
+}
