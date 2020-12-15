@@ -8,7 +8,7 @@ class ParamMap(ParameterMap):
             'max_zoom': 13,
             'base_layer': 'Esri.DeLorme',
             'show_labels': True,
-            'resize_direction': 'e',
+            'resize_direction': 's',
         }
 
 
