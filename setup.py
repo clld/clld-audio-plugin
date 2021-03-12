@@ -2,15 +2,15 @@ from setuptools import setup, find_packages
 
 setup(
     name='clld-audio-plugin',
-    version='0.1.2.dev0',
+    version='0.1.2',
     description='clld-audio-plugin',
     classifiers=[
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.5",
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
         "Framework :: Pyramid",
         "Topic :: Internet :: WWW/HTTP",
         "Topic :: Internet :: WWW/HTTP :: WSGI :: Application",

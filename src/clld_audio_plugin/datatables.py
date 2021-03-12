@@ -5,6 +5,8 @@ __all__ = ['AudioCol']
 
 
 class AudioCol(Col):
+    __kw__ = dict(bSearchable=False, bSortable=False)
+
     def format(self, item):
         if item.audio:
             return HTML.audio(
