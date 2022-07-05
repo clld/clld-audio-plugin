@@ -11,6 +11,7 @@ class AudioCol(Col):
         if item.audio:
             return HTML.audio(
                 HTML.source(src=item.audio, type="audio/mpeg"),
-                controls="controls"
+                controls="controls",
+                preload="metadata"
             )
         return ''
