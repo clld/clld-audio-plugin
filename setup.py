@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='clld-audio-plugin',
-    version='1.0.0',
+    version='1.0.1.dev0',
     description='clld-audio-plugin',
     classifiers=[
         "Programming Language :: Python",
