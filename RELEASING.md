@@ -11,7 +11,7 @@ Releasing clld-audio-plugin
   tox -r
   ```
 
-- Change setup.py version to the new version number.
+- Change setup.cfg version to the new version number.
 
 - Bump version number:
   ```
@@ -37,7 +37,7 @@ Releasing clld-audio-plugin
   git push --tags
   ```
 
-- Append `.dev0` to the version number in `setup.py` for the new development cycle.
+- Append `.dev0` to the version number in `setup.cfg` for the new development cycle.
 
 - Commit/push the version change:
   ```shell
