@@ -6,7 +6,7 @@ class ParamMap(ParameterMap):
         return {
             'with_audioplayer': True,
             'max_zoom': 13,
-            'base_layer': 'Esri.DeLorme',
+            'base_layer': 'OpenTopoMap',
             'show_labels': True,
             'resize_direction': 's',
         }
