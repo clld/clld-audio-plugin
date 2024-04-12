@@ -16,7 +16,7 @@ def test_AudioCol(mocker):
 
 
 def test_form2audio(mocker):
-    res =form2audio(mocker.Mock(
+    res = form2audio(mocker.MagicMock(
         iter_rows=lambda *args: [dict(mimetype='audio/mpeg', formReference='x')],
         get_row_url=lambda *args: 'http://example.org'))
     assert res['x'] == 'http://example.org'
