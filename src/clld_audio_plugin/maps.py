@@ -1,8 +1,12 @@
+"""
+A ParameterMap class with audioplayer support.
+"""
 from clld.web.maps import ParameterMap
 
 
 class ParamMap(ParameterMap):
-    def get_options(self):
+    """ParameterMap which activates audioplayer support."""
+    def get_options(self):  # pylint: disable=C0116
         return {
             'with_audioplayer': True,
             'max_zoom': 13,
@@ -12,5 +16,5 @@ class ParamMap(ParameterMap):
         }
 
 
-def includeme(config):
+def includeme(config):  # pylint: disable=C0116
     config.register_map('parameter', ParamMap)
