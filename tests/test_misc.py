@@ -23,7 +23,12 @@ def test_AudioCol(mocker):
 
 @pytest.mark.parametrize(
     'ds',
-    ['dataset_with_formReference', 'dataset_without_mediatable', 'dataset_with_mediaReference'],
+    [
+        'dataset_with_formReference',
+        'dataset_without_mediatable',
+        'dataset_with_mediaReference',
+        'dataset_with_valueUrl',
+    ],
 )
 def test_form2audio(ds):
     ds = Dataset.from_metadata(pathlib.Path(__file__).parent / ds / 'metadata.json')
