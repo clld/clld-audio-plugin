@@ -5,9 +5,9 @@ from typing import Optional, TYPE_CHECKING
 try:
     from csvw import Table, URITemplate
     from csvw.datatypes import anyURI
-    with_csvw = True
+    with_csvw = True  # pylint: disable=C0103
 except ImportError:  # pragma: no cover
-    with_csvw = False
+    with_csvw = False  # pylint: disable=C0103
 
 if TYPE_CHECKING:
     from pycldf import Dataset  # pragma: no cover
