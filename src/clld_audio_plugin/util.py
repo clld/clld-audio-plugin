@@ -1,18 +1,25 @@
-"""
-Utilities
-"""
+"""Utilities."""
 import re
-from typing import Optional
+from typing import Optional, TYPE_CHECKING
 
-from pycldf import Dataset
-from csvw import Table, URITemplate
-from csvw.datatypes import anyURI
+try:
+    from csvw import Table, URITemplate
+    from csvw.datatypes import anyURI
+    with_csvw = True
+except ImportError:  # pragma: no cover
+    with_csvw = False
+
+if TYPE_CHECKING:
+    from pycldf import Dataset  # pragma: no cover
+
 
 __all__ = ['form2audio']
 
 
-def get_url(ds: Dataset, table: Table, row: dict, url_template: Optional[URITemplate] = None):
+def get_url(ds: 'Dataset', table: Table, row: dict, url_template: Optional[URITemplate] = None):
     """Get the most appropriate URL for a row in MediaTable."""
+    if not with_csvw:  # pragma: no cover
+        raise ImportError('This functionality requires installing the package with [initdb] extra.')
     if url_template:
         res = url_template.expand(row)
     else:
@@ -20,9 +27,8 @@ def get_url(ds: Dataset, table: Table, row: dict, url_template: Optional[URITemp
     return re.sub(r'\w//', '/', res)
 
 
-def form2audio(cldf: Dataset, mimetype: str = 'audio/mpeg') -> dict[str, str]:
-    """
-    Get suitable audio files for forms.
+def form2audio(cldf: 'Dataset', mimetype: str = 'audio/mpeg') -> dict[str, str]:
+    """Get suitable audio files for forms.
 
     If MediaTable has a pathInZip property, URL templates specified as valueUrl om the table's
     id column are preferred, since zip file members cannot really be linked to.
@@ -32,7 +38,10 @@ def form2audio(cldf: Dataset, mimetype: str = 'audio/mpeg') -> dict[str, str]:
     - FormTable can be augmented with a list-valued mediaReference column.
 
     :return: `dict` mapping form ID to audio file URL.
+
     """
+    if not with_csvw:  # pragma: no cover
+        raise ImportError('This functionality requires installing the package with [initdb] extra.')
     res = {}
     table = 'MediaTable' if 'MediaTable' in cldf else 'media.csv'
     with_media_type = (table, 'mediaType') in cldf

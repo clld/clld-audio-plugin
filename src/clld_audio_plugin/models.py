@@ -1,6 +1,4 @@
-"""
-Extends Value with an audio column.
-"""
+"""Extends Value with an audio column."""
 from zope.interface import implementer
 import sqlalchemy as sa
 import sqlalchemy.orm  # noqa: F401  # pylint: disable=W0611
@@ -15,5 +13,6 @@ __all__ = ['Counterpart']
 @implementer(IValue)
 class Counterpart(CustomModelMixin, Value):
     """The audio column will should hold the URL to the audio file."""
+
     pk = sa.Column(sa.Integer, sa.ForeignKey('value.pk'), primary_key=True)
     audio = sa.Column(sa.Unicode)

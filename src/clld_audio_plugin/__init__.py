@@ -1,6 +1,4 @@
-"""
-Support for apps that have audio files associated with forms, such as the *Voices series.
-"""
+"""Support for apps that have audio files associated with forms, such as the *Voices series."""
 from clld_audio_plugin import maps
 
 
